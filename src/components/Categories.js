@@ -1,10 +1,10 @@
-import React from 'react'
-import '../css/categories.css'
+import React from 'react';
+import '../css/categories.css';
 
 function Categories() {
   return (
-    <div>Categories</div>
-  )
+    <div className='categories'>Categories</div>
+  );
 }
 
-export default Categories
+export default Categories;
