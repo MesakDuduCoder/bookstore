@@ -3,7 +3,7 @@ import '../css/categories.css';
 
 function Categories() {
   return (
-    <div className='categories'>Categories</div>
+    <div className="categories">Categories</div>
   );
 }
 
