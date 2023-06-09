@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  padding: 20px 100px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h2 {
+  flex: 0.2;
+}
+
+.header nav {
+  flex: 0.8;
+  display: flex;
+  gap: 20px;
+}
+
+.header button {
+  flex: 0.1;
+  padding: 5px;
+}

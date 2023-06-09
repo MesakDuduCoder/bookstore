@@ -1,0 +1,27 @@
+.add-book {
+  padding: 20px 0;
+  border-top: 1px solid gray;
+  margin-top: 30px;
+}
+
+.book-form {
+  display: flex;
+  margin-top: 10px;
+}
+
+.book-form input {
+  padding: 10px;
+  margin-right: 20px;
+  flex: 0.6;
+}
+
+.book-form .author {
+  padding: 10px;
+  margin-right: 20px;
+  flex: 0.2;
+}
+
+.book-form button {
+  padding: 10px;
+  flex: 0.2;
+}
