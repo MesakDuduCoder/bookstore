@@ -1,0 +1,27 @@
+.book {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px 40px;
+}
+
+.book-details {
+    flex: 0.5;  
+}
+.book-details ul{
+     display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.book-progress {
+    flex: 0.2;
+    display: flex;
+    align-items: center;
+    
+}
+
+.book-bookmark {
+    flex: 0.3;
+  
+}
