@@ -4,14 +4,19 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <div className="header">
+    <nav className="header">
       <h1>Bookstore CMS</h1>
-      <nav>
-        <Link to="/">BOOKS</Link>
-        <Link to="/categories">CATEGORIES</Link>
-      </nav>
-      <button type="button">pic</button>
-    </div>
+
+      <Link to="/" className="link1">BOOKS</Link>
+
+      <Link to="/categories" className="link2">CATEGORIES</Link>
+
+      <button type="button">
+        <span className="material-icons" style={{ color: ' rgb(2, 144, 255)' }}>
+          person
+        </span>
+      </button>
+    </nav>
   );
 }
 

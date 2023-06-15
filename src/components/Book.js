@@ -13,37 +13,42 @@ function Book({
   return (
     <div className="book">
       <div className="book-details">
-        <h2>{book[0].category}</h2>
-        <h2>{book[0].title}</h2>
-        <h2>{book[0].author}</h2>
+        <h2 className="category">{book[0].category}</h2>
+        <h2 className="title">{book[0].title}</h2>
+        <h2 className="author">{book[0].author}</h2>
         <ul>
           <li>
-            <button type="button">Comments</button>
+            <button type="button" className="book-buttons left">
+              Comments
+            </button>
           </li>
           <li>
             <Button
               onClick={async () => {
                 await dispatch(removeBooks(id));
-                setRefresh((add));
+                setRefresh(add);
               }}
               text="Remove"
+              buttonClass="removeBtn middle"
             />
           </li>
           <li>
-            <button type="button">Edit</button>
+            <button type="button" className="book-buttons right">
+              Edit
+            </button>
           </li>
         </ul>
       </div>
       <div className="book-progress">
-        <div>picture</div>
+        <div className="circle" />
         <div>
-          <div>64%</div>
-          <span>completed</span>
+          <div className="percent">64%</div>
+          <span className="status">Completed</span>
         </div>
       </div>
       <div className="book-bookmark">
         <h2>CURRENT CHAPTER</h2>
-        <h2>Chapter 17</h2>
+        <h3>Chapter 17</h3>
         <button type="button">UPDATE PROGRESS</button>
       </div>
     </div>
