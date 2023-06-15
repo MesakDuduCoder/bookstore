@@ -16,6 +16,7 @@ function AddBook({ refresh, setRefresh }) {
   const categories = ['Horror', 'Fiction', 'Novel', 'Romance', 'Fantasy', 'Thriller', 'Science-Fiction', 'Mystery', 'Crime', 'Anime'];
   const random = Math.floor(Math.random() * 10);
   const id = Object.keys(books);
+
   let itemId = id.length;
 
   id.forEach((item) => {
@@ -30,6 +31,7 @@ function AddBook({ refresh, setRefresh }) {
     author: `${author}`,
     category: categories[random],
   };
+
   const add = refresh + 1;
 
   function handleTitle(e) {
@@ -49,13 +51,13 @@ function AddBook({ refresh, setRefresh }) {
 
         <Button
           onClick={async () => {
-            await dispatch(
-              addBooks(book),
-            );
-
-            setRefresh(add);
+            if (title !== '' && author !== '') {
+              await dispatch(addBooks(book));
+              setRefresh(add);
+            }
           }}
           text="ADD BOOK"
+          buttonClass="addBtn"
         />
       </form>
     </div>

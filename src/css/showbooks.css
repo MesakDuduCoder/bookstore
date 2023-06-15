@@ -1,7 +1,9 @@
 .show-books {
   padding: 50px 100px 200px 100px;
-  background-color: lightgray;
+  background-color: #fafafa;
   gap: 15px;
   display: flex;
   flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 var(--black-5);
 }

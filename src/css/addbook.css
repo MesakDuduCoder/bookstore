@@ -1,7 +1,14 @@
 .add-book {
   padding: 20px 0;
-  border-top: 1px solid gray;
-  margin-top: 30px;
+  border-top: 1px solid lightgray;
+  margin-top: 1.8rem;
+}
+
+.add-book h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  color: #888;
 }
 
 .book-form {
@@ -10,9 +17,16 @@
 }
 
 .book-form input {
-  padding: 10px;
+  padding: 0.813rem 1.063rem 0.813rem 1.063rem;
   margin-right: 20px;
   flex: 0.6;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+}
+
+.book-form input::placeholder {
+  opacity: 0.5;
+  font-size: 1rem;
 }
 
 .book-form .author {
@@ -21,7 +35,16 @@
   flex: 0.2;
 }
 
-.book-form button {
-  padding: 10px;
+.addBtn {
   flex: 0.2;
+  padding: 1.3rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+  border: none;
 }

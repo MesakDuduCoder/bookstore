@@ -1,21 +1,50 @@
 .header {
   display: flex;
-  padding: 20px 100px;
+  padding: 1.8rem 6.2rem;
   align-items: center;
-  justify-content: space-between;
+  background-color: white;
 }
 
-.header h2 {
-  flex: 0.2;
+.header h1 {
+  width: 15rem;
+  height: 2.313rem;
+  margin: 0.375rem 2.938rem 0.125rem 0;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #0290ff;
 }
 
-.header nav {
-  flex: 0.8;
-  display: flex;
-  gap: 20px;
+.link1 {
+  width: 3.688rem;
+  height: 1rem;
+  margin: 1.125rem 0 0.688rem 0;
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  color: #121212;
+  text-decoration: none;
+}
+
+.link2 {
+  width: 6.563rem;
+  height: 1rem;
+  margin: 1.125rem 2.563rem 0.688rem 2.563rem;
+  opacity: 0.5;
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  color: #121212;
+  text-decoration: none;
 }
 
 .header button {
-  flex: 0.1;
-  padding: 5px;
+  cursor: pointer;
+  width: 2.813rem;
+  height: 2.813rem;
+  border-radius: 100%;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+  margin-left: auto;
+}
+
+.material-icons {
+  color: rgb(2, 144, 255);
 }

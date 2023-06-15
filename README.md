@@ -15,14 +15,14 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-    <!-- - [🚀 Live Demo](#live-demo)  -->
+    - [🚀 Live Demo](#live-demo) 
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
 - [👥 Authors](#authors)
-<!-- - [🔭 Future Features](#future-features) -->
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -57,9 +57,9 @@ Save their progress on any book.
 
 <details>
 
-<summary>Bundler</summary>
+<summary>Framework</summary>
   <ul>
-    <li><a href="https://react.dev/">React JS/a></li>
+    <li><a href="https://react.dev/">React JS</a></li>
   </ul>
 </details>
 <details>
@@ -83,11 +83,11 @@ Save their progress on any book.
 
 <!-- LIVE DEMO -->
 
-<!-- ## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](coming soon)
+- [Live Demo Link](https://bookstore-jz8k.onrender.com/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -107,7 +107,9 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-git clone https://github.com/MesakDuduCoder/bookstore.git
+  ```sh
+  git clone https://github.com/MesakDuduCoder/bookstore.git
+  ```
 
 ### Install
 
@@ -116,12 +118,17 @@ Install this project with:
   cd bookstore
   then type npm install
 
+  ```sh
+  npm install
+  ```
 ### Usage
 
 To run the project:
 
-type and run command on terminal on root of project folder: npm start
-
+type and run command on terminal on root of project folder: 
+```sh
+npm start
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -141,7 +148,9 @@ type and run command on terminal on root of project folder: npm start
 
  ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[styling]**
+- Test the app using RTL
+- Add animations style
+- Add details page
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> 
 
