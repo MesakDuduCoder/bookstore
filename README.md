@@ -107,7 +107,9 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-git clone https://github.com/MesakDuduCoder/bookstore.git
+  ```sh
+  git clone https://github.com/MesakDuduCoder/bookstore.git
+  ```
 
 ### Install
 
@@ -116,12 +118,17 @@ Install this project with:
   cd bookstore
   then type npm install
 
+  ```sh
+  npm install
+  ```
 ### Usage
 
 To run the project:
 
-type and run command on terminal on root of project folder: npm start
-
+type and run command on terminal on root of project folder: 
+```sh
+npm start
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
