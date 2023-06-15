@@ -12,7 +12,7 @@ function Header() {
       <Link to="/categories" className="link2">CATEGORIES</Link>
 
       <button type="button">
-        <span className="material-icons" style={{ color: ' rgb(2, 144, 255)' }}>
+        <span className="material-icons">
           person
         </span>
       </button>
