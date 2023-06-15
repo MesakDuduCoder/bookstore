@@ -22,7 +22,7 @@
   - [Install](#install)
   - [Usage](#usage)
 - [👥 Authors](#authors)
-<!-- - [🔭 Future Features](#future-features) -->
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -146,11 +146,13 @@ npm start
 
 <!-- FUTURE FEATURES -->
 
- <!-- ## 🔭 Future Features <a name="future-features"></a>
+ ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[styling]**
+- Test the app using RTL
+- Add animations style
+- Add details page
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>  -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p> 
 
 <!-- CONTRIBUTING -->
 
