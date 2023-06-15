@@ -57,9 +57,9 @@ Save their progress on any book.
 
 <details>
 
-<summary>Bundler</summary>
+<summary>Framework</summary>
   <ul>
-    <li><a href="https://react.dev/">React JS/a></li>
+    <li><a href="https://react.dev/">React JS</a></li>
   </ul>
 </details>
 <details>
