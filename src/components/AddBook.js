@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { PropTypes } from 'prop-types';
-import { addBooks } from '../redux/books/booksSlice';
+import { addBooks, getBooks } from '../redux/books/booksSlice';
 import '../css/addbook.css';
 import Button from './Button';
 
-function AddBook({ refresh, setRefresh }) {
+function AddBook() {
   const dispatch = useDispatch();
 
   const [title, setTitle] = useState('');
@@ -15,12 +14,12 @@ function AddBook({ refresh, setRefresh }) {
 
   const categories = ['Horror', 'Fiction', 'Novel', 'Romance', 'Fantasy', 'Thriller', 'Science-Fiction', 'Mystery', 'Crime', 'Anime'];
   const random = Math.floor(Math.random() * 10);
-  const id = Object.keys(books);
 
-  let itemId = id.length;
 
-  id.forEach((item) => {
-    if (item === `item_${itemId}`) {
+  let itemId = books.length;
+
+  books.forEach((item) => {
+    if (item.item_id === `item_${itemId}`) {
       itemId += 1;
     }
   });
@@ -32,8 +31,6 @@ function AddBook({ refresh, setRefresh }) {
     category: categories[random],
   };
 
-  const add = refresh + 1;
-
   function handleTitle(e) {
     setTitle(e.target.value);
   }
@@ -42,6 +39,10 @@ function AddBook({ refresh, setRefresh }) {
     setAuthor(e.target.value);
   }
 
+  async function handleAddBook() {
+    await dispatch(addBooks(book));
+    // await dispatch(getBooks());
+  }
   return (
     <div className="add-book">
       <h2>ADD NEW BOOK</h2>
@@ -50,12 +51,7 @@ function AddBook({ refresh, setRefresh }) {
         <input className="author" type="text" placeholder="Author" onChange={handleAuthor} />
 
         <Button
-          onClick={async () => {
-            if (title !== '' && author !== '') {
-              await dispatch(addBooks(book));
-              setRefresh(add);
-            }
-          }}
+          onClick={handleAddBook}
           text="ADD BOOK"
           buttonClass="addBtn"
         />
@@ -64,9 +60,6 @@ function AddBook({ refresh, setRefresh }) {
   );
 }
 
-AddBook.propTypes = {
-  refresh: PropTypes.number.isRequired,
-  setRefresh: PropTypes.func.isRequired,
-};
+
 
 export default AddBook;

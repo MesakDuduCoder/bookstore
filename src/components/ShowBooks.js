@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import '../css/showbooks.css';
 import Book from './Book';
@@ -8,18 +8,13 @@ import { getBooks } from '../redux/books/booksSlice';
 function ShowBooks() {
   const dispatch = useDispatch();
 
-  const { books, isLoading } = useSelector((store) => store.books);
-  const [refresh, setRefresh] = useState(0);
-
-  const books2 = Object.values(books);
-  const ids = Object.keys(books);
+  const{ books, isLoading } = useSelector((store) => store.books);
 
   useEffect(() => {
-    async function updateBooks() {
-      await dispatch(getBooks());
-    }
-    updateBooks();
-  }, [refresh]);
+     dispatch(getBooks());
+  }, []);
+
+  console.log(books);
 
   if (isLoading) {
     return (
@@ -31,16 +26,13 @@ function ShowBooks() {
 
   return (
     <div className="show-books">
-      {books2.map((book, index) => (
+      {books.map((book, index) => (
         <Book
           key={book.item_id}
           book={book}
-          id={ids[index]}
-          refresh={refresh}
-          setRefresh={setRefresh}
         />
       ))}
-      <AddBook refresh={refresh} setRefresh={setRefresh} />
+      <AddBook />
     </div>
   );
 }

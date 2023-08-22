@@ -3,19 +3,22 @@ import { useDispatch } from 'react-redux';
 import PropTypes, { objectOf } from 'prop-types';
 import '../css/book.css';
 import Button from './Button';
-import { removeBooks } from '../redux/books/booksSlice';
+import { getBooks, removeBooks } from '../redux/books/booksSlice';
 
 function Book({
-  book, id, refresh, setRefresh,
+  book
 }) {
   const dispatch = useDispatch();
-  const add = refresh + 1;
+  async function handleRemove() {
+await dispatch(removeBooks(book.id));
+await dispatch(getBooks());
+  }
   return (
     <div className="book">
       <div className="book-details">
-        <h2 className="category">{book[0].category}</h2>
-        <h2 className="title">{book[0].title}</h2>
-        <h2 className="author">{book[0].author}</h2>
+        <h2 className="category">{book.category}</h2>
+        <h2 className="title">{book.title}</h2>
+        <h2 className="author">{book.author}</h2>
         <ul>
           <li>
             <button type="button" className="book-buttons left">
@@ -24,10 +27,7 @@ function Book({
           </li>
           <li>
             <Button
-              onClick={async () => {
-                await dispatch(removeBooks(id));
-                setRefresh(add);
-              }}
+              onClick={handleRemove}
               text="Remove"
               buttonClass="removeBtn middle"
             />
@@ -60,8 +60,6 @@ Book.propTypes = {
     objectOf(PropTypes.string, PropTypes.string, PropTypes.string),
   ).isRequired,
   id: PropTypes.string.isRequired,
-  refresh: PropTypes.number.isRequired,
-  setRefresh: PropTypes.func.isRequired,
 };
 
 export default Book;

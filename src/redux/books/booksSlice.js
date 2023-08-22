@@ -6,16 +6,15 @@ const initialState = {
   isLoading: true,
 };
 
-const id = 'fVdWgIUf9MtyDEM6BCUF';
+const id = "fVdWgIUf9MtyDEM6BCUF";
 const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${id}/books`;
 
 export const getBooks = createAsyncThunk(
   'books/getBooks',
-  async (name, thunkAPI) => {
+  async (thunkAPI) => {
     try {
-      const resp = await axios(url);
-
-      return resp.data;
+      const res = await axios(url);
+      return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue('something went wrong');
     }
@@ -26,21 +25,16 @@ export const addBooks = createAsyncThunk(
   'books/addBooks',
   async (book, thunkAPI) => {
     try {
-      const res = await axios.post(
+        await axios.post(
         url,
-        {
-          item_id: book.item_id,
-          title: book.title,
-          author: book.author,
-          category: book.category,
-        },
+        book,
         {
           headers: {
             'Content-Type': 'application/json',
           },
         },
       );
-      return res.data;
+      return book;
     } catch (error) {
       return thunkAPI.rejectWithValue('something went wrong');
     }
@@ -61,7 +55,7 @@ export const removeBooks = createAsyncThunk(
 );
 
 const booksSlice = createSlice({
-  name: 'books',
+  name: "books",
   initialState,
   extraReducers: {
     [getBooks.pending]: (state) => {
@@ -69,10 +63,16 @@ const booksSlice = createSlice({
     },
     [getBooks.fulfilled]: (state, action) => {
       state.isLoading = false;
-      state.books = action.payload;
+      const mybooks = Object.values(action.payload);
+      mybooks.forEach((book) => {
+        state.books.push(book[0]);
+      });
     },
     [getBooks.rejected]: (state) => {
       state.isLoading = false;
+    },
+    [addBooks.fulfilled]: (state, action) => {
+      state.books.push(action.payload);
     },
   },
 });
